@@ -44,7 +44,9 @@ namespace Note2
             float ans = 0;
             foreach(Grid g in grids)
             {
-                ans += Convert.ToInt32(g.Price.Text);
+                int m = 0;
+                Int32.TryParse(g.Price.Text, out m);
+                ans += Convert.ToInt32(m);
             }
             Ans.Text = ans.ToString();
         }
